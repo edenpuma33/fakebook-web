@@ -5,7 +5,7 @@ export const FacebookTitle = (props) => {
       height="50"
       viewBox="0 0 230 50"
       xmlns="http://www.w3.org/2000/svg"
-      {...props}
+      {...props} // ทุก props ที่รับมาจะมาอยู่ที่นี่
     >
       <text
         x="10"

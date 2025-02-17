@@ -1,4 +1,5 @@
 import { FacebookTitle } from "../icons";
+import Register from "./Register";
 
 const Login = () => {
   return (
@@ -22,20 +23,26 @@ const Login = () => {
                 <div className="card-body gap-3 p-4">
                   <input
                     type="text"
-                    placeholder="Email or Phonenumber"
+                    placeholder="E-mail or Phone number"
                     className="input input-bordered w-full"
                   />
                   <input
                     type="text"
-                    placeholder="password"
+                    placeholder="Password"
                     className="input input-bordered w-full"
                   />
-                  <button className="btn btn-primary text-xl">Login</button>
+                  <button className="btn btn-primary text-xl">Log in</button>
                   <p className="text-center cursor-pointer opacity-70">
                     Forgotten password?
                   </p>
                   <div className="divider my-0"></div>
-                  <button className="btn btn-secondary text-lg text-white mx-auto">
+                  <button
+                    className="btn btn-secondary text-lg text-white mx-auto"
+                    type="button"
+                    onClick={() =>
+                      document.getElementById("register-form").showModal()
+                    }
+                  >
                     Create new account
                   </button>
                 </div>
@@ -44,6 +51,17 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <dialog id="register-form" className="modal">
+        <div className="modal-box">
+          <button
+            className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            onClick={() => document.getElementById("register-form").close()}
+          >
+            ✕
+          </button>
+          <Register />
+        </div>
+      </dialog>
     </>
   );
 };

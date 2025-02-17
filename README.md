@@ -87,14 +87,16 @@ export default {
 <html data-theme="light"></html>
 ```
 
-#### Install react router
+#### Install react router and axios
 
 ```bash
-npm i react-router
+npm i react-router axios
 ```
 
 ## Step 2 Create Folder routes & Edit main.jsx
+
 ### routes/AppRouter.jsx
+
 ```js
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router";
 
@@ -114,25 +116,22 @@ export default function AppRouter() {
 
 ```js
 const Login = () => {
-  return (
-    <div>Login Page</div>
-  )
-}
-export default Login
+  return <div>Login Page</div>;
+};
+export default Login;
 ```
 
 ### pages/Friends.jsx
 
 ```js
 const Friends = () => {
-  return (
-    <div>Friends Page</div>
-  )
-}
-export default Friends
+  return <div>Friends Page</div>;
+};
+export default Friends;
 ```
 
 ### App.jsx
+
 ```js
 import {
   createBrowserRouter,
@@ -171,6 +170,7 @@ export default function AppRouter() {
 ## Step 3 Edit pages/Login.jsx & Create Folder icons & Edit tailwind.config.js
 
 ### tailwind.config.js
+
 ```js
 daisyui: {
     themes: [
@@ -219,7 +219,9 @@ daisyui: {
 ```
 
 สั่ง chatgpt ทำโดย : create facebook title in svg with jsx format
+
 ### icons/index.jsx
+
 ```js
 export const FacebookTitle = (props) => {
   return (
@@ -272,7 +274,7 @@ const Login = () => {
                 <div className="card-body gap-3 p-4">
                   <input
                     type="text"
-                    placeholder="Email or Phonenumber"
+                    placeholder="E-mail or Phone number"
                     className="input input-bordered w-full"
                   />
                   <input
@@ -285,7 +287,13 @@ const Login = () => {
                     Forgotten password?
                   </p>
                   <div className="divider my-0"></div>
-                  <button className="btn btn-secondary text-lg text-white mx-auto">
+                  <button
+                    className="btn btn-secondary text-lg text-white mx-auto"
+                    type="button"
+                    onClick={() =>
+                      document.getElementById("register-form").showModal()
+                    }
+                  >
                     Create new account
                   </button>
                 </div>
@@ -294,9 +302,267 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <dialog id="register-form" className="modal">
+        <div className="modal-box">
+          <form method="dialog">
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+              ✕
+            </button>
+          </form>
+          <h3 className="font-bold text-lg">Hello!</h3>
+          <p className="py-4">Press ESC key or click on ✕ button to close</p>
+        </div>
+      </dialog>
     </>
   );
 };
 export default Login;
 ```
 
+## Step 4 Create Register.jsx
+
+### pages/Register.jsx
+
+```js
+import { useState } from "react";
+
+// เอาไว้ข้างนอกเพราะทุกครั้งที่พิมพ์ state จะเปลี่ยนทำให้ต้องรันใหม่
+const initInput = {
+  firstName: "",
+  lastName: "",
+  identity: "",
+  password: "",
+  confirmPassword: "",
+};
+
+function Register() {
+  const [input, setInput] = useState(initInput);
+
+  const hdlChange = (e) => {
+    setInput((prv) => ({ ...prv, [e.target.name]: e.target.value }));
+  };
+
+  const hdlClearInput = () => setInput(initInput);
+
+  return (
+    <>
+      <div className="text-3xl text-center opacity-70">
+        Create a new account
+      </div>
+      <div className="divider opacity-60"></div>
+      <form className="flex flex-col gap-5 p-4 pt-3">
+        <div className="flex gap-2">
+          <input
+            type="text"
+            placeholder="First name"
+            className="input input-bordered w-full"
+            name="firstName"
+            value={input.firstName}
+            onChange={hdlChange}
+          />
+          <input
+            type="text"
+            placeholder="Last name"
+            className="input input-bordered w-full"
+            name="lastName"
+            value={input.lastName}
+            onChange={hdlChange}
+          />
+        </div>
+        <input
+          type="text"
+          placeholder="E-mail or Phone number"
+          className="input input-bordered w-full"
+          name="identity"
+          value={input.identity}
+          onChange={hdlChange}
+        />
+        <input
+          type="password"
+          placeholder="New password"
+          className="input input-bordered w-full"
+          name="password"
+          value={input.password}
+          onChange={hdlChange}
+        />
+        <input
+          type="password"
+          placeholder="Confirm password"
+          className="input input-bordered w-full"
+          name="confirmPassword"
+          value={input.confirmPassword}
+          onChange={hdlChange}
+        />
+        <button className="btn btn-secondary text-xl text-white">
+          Sign up
+        </button>
+        <button
+          className="btn btn-warning text-xl text-white"
+          type="button"
+          onClick={hdlClearInput}
+        >
+          Reset
+        </button>
+      </form>
+    </>
+  );
+}
+export default Register;
+```
+
+### Edit pages/Login.jsx import and Edit Register.jsx
+
+### Login.jsx
+```js
+<dialog id="register-form" className="modal">
+  <div className="modal-box">
+    <button
+      className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+      onClick={() => document.getElementById("register-form").close()}
+    >
+      ✕
+    </button>
+    <Register />
+  </div>
+</dialog>
+```
+
+### install react-toastify
+```bash
+npm i react-toastify
+```
+
+### Edit main.jsx
+```js
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import AppRouter from "./routes/AppRouter.jsx";
+import { Bounce, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+createRoot(document.getElementById("root")).render(
+  <>
+    <AppRouter />
+    <ToastContainer
+      position="bottom-center"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick={false}
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="light"
+      transition={Bounce}
+    />
+  </>
+);
+```
+
+### Update Register.jsx
+```js
+import { useState } from "react";
+import { toast } from "react-toastify";
+
+// เอาไว้ข้างนอกเพราะทุกครั้งที่พิมพ์ state จะเปลี่ยนทำให้ต้องรันใหม่
+const initInput = {
+  firstName: "",
+  lastName: "",
+  identity: "",
+  password: "",
+  confirmPassword: "",
+};
+
+function Register() {
+  const [input, setInput] = useState(initInput);
+
+  const hdlChange = (e) => {
+    setInput((prv) => ({ ...prv, [e.target.name]: e.target.value }));
+  };
+
+  const hdlClearInput = () => setInput(initInput);
+
+  const hdlRegister = (e) => {
+    const { firstName, lastName, identity, password, confirmPassword } = input;
+    e.preventDefault();
+    // validation
+    if (
+      !firstName.trim() ||
+      !lastName.trim() ||
+      !identity.trim() ||
+      !password.trim()
+    ) {
+      return toast.error("Please fill all inputs");
+    }
+    if (password !== confirmPassword) {
+      return toast("Password and Confirm password unmatched!!");
+    }
+    toast.success("ok", {position: 'top-center'});
+  };
+
+  return (
+    <>
+      <div className="text-3xl text-center opacity-70">
+        Create a new account
+      </div>
+      <div className="divider opacity-60"></div>
+      <form onSubmit={hdlRegister} className="flex flex-col gap-5 p-4 pt-3">
+        <div className="flex gap-2">
+          <input
+            type="text"
+            placeholder="First name"
+            className="input input-bordered w-full"
+            name="firstName"
+            value={input.firstName}
+            onChange={hdlChange}
+          />
+          <input
+            type="text"
+            placeholder="Last name"
+            className="input input-bordered w-full"
+            name="lastName"
+            value={input.lastName}
+            onChange={hdlChange}
+          />
+        </div>
+        <input
+          type="text"
+          placeholder="E-mail or Phone number"
+          className="input input-bordered w-full"
+          name="identity"
+          value={input.identity}
+          onChange={hdlChange}
+        />
+        <input
+          type="password"
+          placeholder="New password"
+          className="input input-bordered w-full"
+          name="password"
+          value={input.password}
+          onChange={hdlChange}
+        />
+        <input
+          type="password"
+          placeholder="Confirm password"
+          className="input input-bordered w-full"
+          name="confirmPassword"
+          value={input.confirmPassword}
+          onChange={hdlChange}
+        />
+        <button className="btn btn-secondary text-xl text-white">
+          Sign up
+        </button>
+        <button
+          className="btn btn-warning text-xl text-white"
+          type="button"
+          onClick={hdlClearInput}
+        >
+          Reset
+        </button>
+      </form>
+    </>
+  );
+}
+export default Register;
+```
