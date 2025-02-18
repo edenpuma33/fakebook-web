@@ -1,12 +1,9 @@
-import {
-  createBrowserRouter,
-  Navigate,
-  Outlet,
-  RouterProvider,
-} from "react-router";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router";
 import App from "../App";
 import Login from "../pages/Login";
 import Friends from "../pages/Friends";
+import useUserStore from "../stores/userStore";
+import Profile from "../pages/Profile";
 
 const guestRouter = createBrowserRouter([
   { path: "/", element: <Login /> },
@@ -20,13 +17,14 @@ const userRouter = createBrowserRouter([
     children: [
       { index: true, element: <p>Sidebar + Posts</p> },
       { path: "friends", element: <Friends /> },
+      { path: "profile", element: <Profile /> },
       { path: "*", element: <Navigate to="/" /> }, // ถ้าพิมพ์ path มั่วๆมาจะไปที่หน้า Home page
     ],
   },
 ]);
 
 export default function AppRouter() {
-  const user = null; // const user = null ;
+  const user = useUserStore((state) => state.user);
   const finalRouter = user ? userRouter : guestRouter;
-  return <RouterProvider router={finalRouter} />;
+  return <RouterProvider key={user?.id} router={finalRouter} />; // เพิ่ม key จะทำให้กด login แล้วหน้าเว็บเปลี่ยน
 }

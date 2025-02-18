@@ -1,12 +1,19 @@
 import { Outlet } from "react-router";
+import useUserStore from "./stores/userStore";
+import Header from "./components/Header"
 
 const App = () => {
+  const user = useUserStore((state) => state.user);
+  const logout = useUserStore((state) => state.logout);
   return (
     <>
-    <p>Header Menu</p>
-    <Outlet />{" "}
-    {/*จะมี children ติดมาด้วยตาม path ที่กำหนดไว้ สามารถเปลี่ยนตำแหน่งการวางบน-ล่างได้*/}
-  </>
+   <div className="min-h-screen bg-lime-100">
+    <Header/>
+    <main className="relative flex bg-gray-100 border pt-14">
+      <Outlet/>
+    </main>
+   </div>
+    </>
   );
 };
 export default App;

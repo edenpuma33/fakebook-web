@@ -6,7 +6,6 @@ import useUserStore from "../stores/userStore";
 
 const Login = () => {
   const login = useUserStore((state) => state.login);
-  const token = useUserStore((state) => state.token);
   const [input, setInput] = useState({
     identity: "",
     password: "",
@@ -25,8 +24,7 @@ const Login = () => {
         return toast.error("Please fill all inputs");
       }
       let data = await login(input);
-      console.log(data.token);
-      toast.success('Login Successful')
+      // toast.success("Login Successful");
     } catch (err) {
       console.log(err);
       const errMsg = err.response?.data?.error || err.message;
@@ -68,7 +66,7 @@ const Login = () => {
                     value={input.password}
                     onChange={hdlChange}
                   />
-                  <button className="btn btn-primary text-xl">Log in</button>
+                  <button className="btn btn-primary text-xl">Login</button>
                   <p className="text-center cursor-pointer opacity-70">
                     Forgotten password?
                   </p>
