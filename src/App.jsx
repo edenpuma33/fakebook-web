@@ -9,8 +9,9 @@ const App = () => {
     <>
    <div className="min-h-screen bg-lime-100">
     <Header/>
-    <main className="relative flex bg-gray-100 border pt-14">
-      <Outlet/>
+    <main className="relative flex gap-2 bg-gray-100 border pt-14">
+      <Outlet/> 
+      {/* Outlet คือ children */}
     </main>
    </div>
     </>

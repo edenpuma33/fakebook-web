@@ -876,19 +876,20 @@ export default function AppRouter() {
 ```js
 import { Outlet } from "react-router";
 import useUserStore from "./stores/userStore";
+import Header from "./components/Header";
 
 const App = () => {
   const user = useUserStore((state) => state.user);
   const logout = useUserStore((state) => state.logout);
   return (
     <>
-      <p>Header Menu</p>
-      <p className="text-blue-700">Welcome, {user.firstName}</p>
-      <button className="btn btn-accent" onClick={logout}>
-        Logout
-      </button>
-      <Outlet />
-      {/*จะมี children ติดมาด้วยตาม path ที่กำหนดไว้ สามารถเปลี่ยนตำแหน่งการวางบน-ล่างได้*/}
+      <div className="min-h-screen bg-lime-100">
+        <Header />
+        <main className="relative flex gap-2 bg-gray-100 border pt-14">
+          <Outlet />
+          {/* Outlet คือ children */}
+        </main>
+      </div>
     </>
   );
 };
@@ -931,11 +932,13 @@ const App = () => {
 };
 export default App;
 ```
+
 ---
 
-### หารูป svg  https://www.svgrepo.com/ แล้วเอาไปแปลงใน https://transform.tools/
+### หารูป svg https://www.svgrepo.com/ แล้วเอาไปแปลงใน https://transform.tools/
 
 ### Edit icons/index.jsx
+
 ```js
 export const FacebookTitle = (props) => {
   return (
@@ -960,7 +963,6 @@ export const FacebookTitle = (props) => {
   );
 };
 
-
 export function FacebookLogo(props) {
   return (
     <svg
@@ -980,7 +982,6 @@ export function FacebookLogo(props) {
     </svg>
   )
 }
-
 
 export function SearchIcon(props) {
   return (
@@ -1145,11 +1146,41 @@ export function DropdownArrow(props) {
     </svg>
   )
 }
+
+export function FriendIcon2(props) {
+  return (
+    <svg viewBox="0 -64 640 640" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M192 256c61.9 0 112-50.1 112-112S253.9 32 192 32 80 82.1 80 144s50.1 112 112 112zm76.8 32h-8.3c-20.8 10-43.9 16-68.5 16s-47.6-6-68.5-16h-8.3C51.6 288 0 339.6 0 403.2V432c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48v-28.8c0-63.6-51.6-115.2-115.2-115.2zM480 256c53 0 96-43 96-96s-43-96-96-96-96 43-96 96 43 96 96 96zm48 32h-3.8c-13.9 4.8-28.6 8-44.2 8s-30.3-3.2-44.2-8H432c-20.4 0-39.2 5.9-55.7 15.4 24.4 26.3 39.7 61.2 39.7 99.8v38.4c0 2.2-.5 4.3-.6 6.4H592c26.5 0 48-21.5 48-48 0-61.9-50.1-112-112-112z" />
+    </svg>
+  )
+}
+
+export function MemoriesIcon(props) {
+  return (
+    <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M9.426 31.305c.61 0 1.078-.164 1.664-.586l6.117-4.524a1.89 1.89 0 00.797-1.547c0-1.101-.867-1.898-1.852-1.898-.445 0-.843.117-1.195.398l-3.14 2.438A19.221 19.221 0 0130.94 8.71 19.265 19.265 0 0150.254 28c.024 10.71-8.578 19.313-19.313 19.313-5.976 0-11.156-2.72-14.695-6.82-.516-.587-1.125-.845-1.71-.845-.962 0-1.852.774-1.852 1.852 0 .516.234 1.102.75 1.734 4.101 4.875 10.523 8.04 17.507 8.04 12.75 0 23.274-10.547 23.274-23.274 0-12.703-10.547-23.273-23.274-23.273-11.789 0-21.726 9.093-23.109 20.578l-2.508-3.563c-.375-.539-.937-.89-1.617-.89-1.078 0-1.922.773-1.922 1.851 0 .469.14.914.422 1.266l4.922 6.07c.75.938 1.36 1.266 2.297 1.266zm15.586 4.383c0 1.054 1.171 1.546 2.203.937l12.562-7.43c.914-.539.89-1.828 0-2.367l-12.562-7.43c-.961-.562-2.203-.14-2.203.938z" />
+    </svg>
+  )
+}
+
+export function GroupIcon(props) {
+  return (
+    <svg viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path
+        d="M1807.059 1270.091c-68.668 48.452-188.725 116.556-343.906 158.57-18.861-102.55-92.725-187.37-196.066-219.106-91.708-28.235-185.11-48.339-279.53-61.666 71.944-60.762 121.638-145.807 135.982-243.162 21.91-.791 44.837-1.243 71.04-1.243 166.023.904 331.143 26.316 490.955 75.445 72.621 22.362 121.525 87.755 121.525 162.861v128.301zm-451.765 338.824c-114.183 80.753-330.24 198.099-621.176 198.099-129.43 0-379.144-26.203-621.177-198.1v-128.752c0-74.993 49.017-140.499 121.75-162.861 162.41-49.694 330.354-74.88 499.427-74.88h8.47c166.588.79 331.821 26.09 491.407 75.106 72.509 22.249 121.3 87.642 121.3 162.635v128.753zm-903.53-761.901V734.072c0-155.632 126.608-282.352 282.354-282.352 155.746 0 282.353 126.72 282.353 282.352v112.942c0 155.746-126.607 282.353-282.353 282.353S451.765 1002.76 451.765 847.014zm734.118-734.118c75.22 0 146.146 29.478 199.567 82.899 53.309 53.421 82.786 124.235 82.786 199.454V508.19c0 155.746-126.607 282.353-282.353 282.353-19.651 0-38.4-2.598-56.47-6.438v-50.033c0-156.423-92.047-290.71-224.188-354.748 8.357-148.066 130.447-266.428 280.658-266.428zm532.857 758.061c-91.37-28.01-184.546-48.226-279.755-61.666 86.174-72.508 142.192-179.802 142.192-301.1V395.248c0-105.374-41.11-204.65-115.877-279.304-74.767-74.767-173.93-115.99-279.417-115.99-200.696 0-365.138 151.002-390.211 345.148-20.217-3.275-40.433-6.325-61.553-6.325-217.977 0-395.294 177.43-395.294 395.294v112.942c0 121.298 56.018 228.593 142.305 301.214-94.305 13.214-188.16 33.092-279.529 61.1C81.092 1246.375 0 1355.249 0 1480.163v185.675l22.588 16.941c275.238 206.344 563.803 237.177 711.53 237.177 344.244 0 593.618-148.63 711.53-237.177l22.587-16.94v-120.51c205.214-50.597 355.652-146.032 429.177-201.373l22.588-16.941V1141.79c0-125.026-80.979-233.901-201.261-270.833z"
+        fillRule="evenodd"
+      />
+    </svg>
+  )
+}
 ```
+
 ---
 
 สร้าง avatar
+
 ### Create components/Avatar.jsx
+
 ```js
 import defaultImg from "../assets/default-avatar.png";
 import { DropdownArrow } from "../icons";
@@ -1167,10 +1198,11 @@ const Avatar = (props) => {
 };
 export default Avatar;
 ```
+
 ---
 
-
 ### Create pages/Profile.jsx
+
 ```js
 import useUserStore from "../stores/userStore";
 
@@ -1188,9 +1220,179 @@ const Profile = () => {
 
 export default Profile;
 ```
+
+### Create components/SidebarMenu.jsx
+
+```js
+import {
+  FriendIcon2,
+  GroupIcon,
+  MarketIcon,
+  MemoriesIcon,
+  Moreicon,
+  PlayIcon,
+} from "../icons";
+import MenuItem from "./MenuItem";
+import useUserStore from "../stores/userStore";
+import Avatar from "../components/Avatar";
+import { Link } from "react-router";
+
+const SidebarMenu = () => {
+  const user = useUserStore((state) => state.user);
+  return (
+    <div className="fixed top-14 h-full w-[350px] pt-2 overflow-auto flex flex-col gap-2 min-w-[220px] max-xl:w-[220px] max-lg:hidden">
+      <Link to="/profile">
+        <MenuItem
+          icon={Avatar}
+          text={`${user.firstName} ${user.lastName}`}
+          className="w-11 rounded-full bg-slate-200"
+          imgSrc={user.profileImage}
+        />
+      </Link>
+      <Link to="friends">
+        <MenuItem icon={FriendIcon2} text="Friends" className="w-11" />
+      </Link>
+      <MenuItem icon={MemoriesIcon} text="Memories" className="w-11" />
+      <MenuItem icon={GroupIcon} text="Group" className="w-11" />
+      <MenuItem icon={PlayIcon} text="Video" className="w-11" />
+      <MenuItem icon={MarketIcon} text="Marketplace" className="w-11" />
+      <MenuItem
+        icon={Moreicon}
+        text="More.."
+        className="w-10 p-2 border border-gray-800 rounded-full"
+      />
+    </div>
+  );
+};
+export default SidebarMenu;
+```
 ---
-เพิ่มหน้า profile
+
+### Create components/PostContainer.jsx
+
+```js
+import CreatePost from "./CreatePost"
+
+const PostContainer = () => {
+  return (
+    <div className="w-[680px] mx-auto min-h-screen my-3 flex flex-col gap-4 rounded-lg bg-pink-300"><CreatePost/></div>
+  )
+}
+export default PostContainer
+```
+
+---
+
+### Create components/SidebarContact.jsx
+
+```js
+import { SearchIcon } from "../icons";
+import Avatar from "./Avatar";
+import MenuItem from "./MenuItem";
+
+function SidebarContact() {
+  return (
+    <div
+      className="fixed top-14 right-0 h-full w-[350px] overflow-auto flex flex-col gap-2
+		pt-4 px-2 max-xl:hidden "
+    >
+      <div className="flex justify-between text-gray-500">
+        <span>Contact</span>
+        <div className="flex gap-2">
+          <SearchIcon className="w-6" />
+          ...
+        </div>
+      </div>
+      <MenuItem
+        icon={Avatar}
+        text="Puma Codecamp"
+        imgSrc="https://www.svgrepo.com/show/303599/spider-man-4-logo.svg"
+        className="w-11 h-11 rounded-full bg-slate-200"
+      />
+      <MenuItem
+        icon={Avatar}
+        text="Nhan Codecamp"
+        imgSrc="https://www.svgrepo.com/show/420360/avatar-batman-comics.svg"
+        className="w-11 h-11 rounded-full bg-slate-200"
+      />
+      <MenuItem
+        icon={Avatar}
+        text="Mint Codecamp"
+        imgSrc="https://www.svgrepo.com/show/420329/anime-away-face.svg"
+        className="w-11 h-11 rounded-full bg-slate-200"
+      />
+    </div>
+  );
+}
+export default SidebarContact;
+```
+---
+
+### Create component/CreatePost.jsx
+
+```js
+import { ActivityIcon, PhotoIcon, VideoIcon } from "../icons";
+import useUserStore from "../stores/userStore";
+import Avatar from "./Avatar";
+
+const CreatePost = () => {
+  const user = useUserStore((state) => state.user);
+  return (
+    <div className="card bg-base-100 shadow-xl">
+      <div className="card-body">
+        <div className="flex gap-2">
+          <Avatar
+            className="w-11 h-11 rounded-full"
+            imgSrc={user.profileImage}
+          />
+          <button className="btn flex-1 rounded-full justify-start">
+            What do you think?
+          </button>
+        </div>
+        <div className="divider mt-1 mb-0"></div>
+        <div className="flex gap-3 justify-between">
+          <div className="flex-1 flex gap-3 justify-center cursor-pointer hover:bg-gray-300 rounded-lg py-2">
+            <VideoIcon className="w-6" />
+            Live /Stream
+          </div>
+          <div className="flex-1 flex gap-3 justify-center cursor-pointer hover:bg-gray-300 rounded-lg py-2">
+            <PhotoIcon className="w-6" />
+            Photo /Video
+          </div>
+          <div className="flex-1 flex gap-3 justify-center cursor-pointer hover:bg-gray-300 rounded-lg py-2">
+            <ActivityIcon className="w-6" />
+            Activity
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+export default CreatePost;
+```
+
+---
+
+### Create components/MenuItem.jsx
+
+```js
+const MenuItem = (props) => {
+  const { icon: Icon, text, ...restProps } = props;
+  return (
+    <button className="btn bg-opacity-0 border-none shadow-none justify-start gap-2 hover:opacity-20">
+      <Icon {...restProps} />
+      {text}
+    </button>
+  );
+};
+export default MenuItem;
+```
+---
+
+เพิ่มหน้า profile กับ add Sidebar
+
 ### Edit AppRouter.jsx
+
 ```js
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router";
 import App from "../App";
@@ -1198,6 +1400,9 @@ import Login from "../pages/Login";
 import Friends from "../pages/Friends";
 import useUserStore from "../stores/userStore";
 import Profile from "../pages/Profile";
+import SidebarMenu from "../components/SidebarMenu";
+import PostContainer from "../components/PostContainer";
+import SidebarContact from "../components/SidebarContact";
 
 const guestRouter = createBrowserRouter([
   { path: "/", element: <Login /> },
@@ -1209,7 +1414,16 @@ const userRouter = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      { index: true, element: <p>Sidebar + Posts</p> },
+      {
+        index: true,
+        element: (
+          <>
+            <SidebarMenu />
+            <PostContainer />
+            <SidebarContact />
+          </>
+        ),
+      },
       { path: "friends", element: <Friends /> },
       { path: "profile", element: <Profile /> },
       { path: "*", element: <Navigate to="/" /> }, // ถ้าพิมพ์ path มั่วๆมาจะไปที่หน้า Home page
@@ -1223,10 +1437,13 @@ export default function AppRouter() {
   return <RouterProvider key={user?.id} router={finalRouter} />; // เพิ่ม key จะทำให้กด login แล้วหน้าเว็บเปลี่ยน
 }
 ```
+
 ---
 
 ทำหน้าเพจที่เข้าไปตอน login
+
 ### Header.jsx
+
 ```js
 import { Link } from "react-router";
 import {
