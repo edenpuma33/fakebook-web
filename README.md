@@ -1227,16 +1227,27 @@ import { useState } from "react";
 import { ImagesIcon } from "../icons";
 import useUserStore from "../stores/userStore";
 import Avatar from "./Avatar";
-import { toast } from "react-toastify";
 import AddPicture from "./AddPicture";
+import { toast } from "react-toastify";
 
 const PostForm = () => {
   const user = useUserStore((state) => state.user);
   const [message, setMessage] = useState("");
-  const [addPic, setAddPic] = useState();
+  const [addPic, setAddPic] = useState(false);
+  const [file, setFile] = useState(null);
 
-  const hdlCreatePost = () => {
-    toast(message);
+  const hdlCreatePost = async () => {
+    try {
+      const body = new FormData();
+      body.append("message", message);
+      if (file) {
+        body.append("image", file);
+      }
+      // ยิง api
+    } catch (error) {
+      const errMsg = error.response?.data?.error || error.message;
+      toast.err(errMsg);
+    }
   };
 
   return (
@@ -1263,7 +1274,7 @@ const PostForm = () => {
         onChange={(e) => setMessage(e.target.value)}
         rows={message.split("\n").length}
       ></textarea>
-      {addPic && <AddPicture />}
+      {addPic && <AddPicture file={file} setFile={setFile} />}
       <div className="flex border rounded-lg p-2 justify-between items-center">
         <p>add with your post</p>
         <div
@@ -1276,7 +1287,7 @@ const PostForm = () => {
       <button
         className="btn btn-primary"
         onClick={hdlCreatePost}
-        disabled={message.trim().length === 0}
+        disabled={message.trim().length === 0 && !file}
       >
         Create Post
       </button>
@@ -1292,16 +1303,34 @@ import { AddPictureIcon } from "../icons";
 
 const AddPicture = (props) => {
   const { file, setFile } = props;
+  const hdlFileChange = (e) => {
+    console.log(e.target.files);
+    setFile(e.target.files[0]);
+    console.log(URL.createObjectURL(e.target.files[0]));
+  };
   return (
     <div className="flex flex-col p-2 border rounded-lg">
       <div
         className="bg-slate-100 hover:bg-slate-200 min-h-40 rounded-lg relative cursor-pointer"
         onClick={() => document.getElementById("input-file").click()}
       >
-        <input type="file" className="opacity-0" id="input-file" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <AddPictureIcon className="w-10 opacity-70 hover:opacity-100" />
-        </div>
+        <input
+          type="file"
+          className="hidden"
+          id="input-file"
+          onChange={hdlFileChange}
+        />
+        {file && (
+          <img
+            src={URL.createObjectURL(file)}
+            className="h-full block mx-auto"
+          />
+        )}
+        {!file && (
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <AddPictureIcon className="w-10 opacity-70 hover:opacity-100" />
+          </div>
+        )}
       </div>
     </div>
   );
@@ -1655,4 +1684,108 @@ export default Header;
 ```
 ---
 
-## Step 8
+## Step 8 Create store/postStore.js
+### postStore.js
+```js
+import axios from "axios";
+import { create } from "zustand";
+
+const usePostStore = create((set, get) => ({
+  posts: [],
+  currentPost: null,
+  loading: false,
+  createPost: async (body, token, user) => {
+    const rs = await axios.post("http://localhost:8899/post", body, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    set((state) => ({
+      posts: [{ ...rs.data, user, likes: [], comments: [] }, ...state.posts],
+    }));
+  },
+}));
+
+export default usePostStore;
+```
+---
+### Edit PostForm.jsx
+สร้าง const token, createPost  
+สามารถโพสแล้วข้อมูลไปเชื่อมกับ MySQL
+```js
+import { useState } from "react";
+import { ImagesIcon } from "../icons";
+import useUserStore from "../stores/userStore";
+import usePostStore from "../stores/postStore";
+import Avatar from "./Avatar";
+import AddPicture from "./AddPicture";
+import { toast } from "react-toastify";
+
+const PostForm = () => {
+  const user = useUserStore((state) => state.user);
+  const token = useUserStore((state) => state.token);
+  const createPost = usePostStore((state) => state.createPost);
+  const [message, setMessage] = useState("");
+  const [addPic, setAddPic] = useState(false);
+  const [file, setFile] = useState(null);
+
+  const hdlCreatePost = async () => {
+    try {
+      const body = new FormData();
+      body.append("message", message);
+      if (file) {
+        body.append("image", file);
+      }
+      // ยิง api
+      await createPost(body, token, user);
+      toast("Create Post Done");
+    } catch (error) {
+      const errMsg = error.response?.data?.error || error.message;
+      toast.error(errMsg);
+    }
+  };
+
+  return (
+    <div className="flex flex-col gap-2">
+      <h3 className="text-xl text-center">Create Post</h3>
+      <div className="divider mt-1 mb-0"></div>
+      <div className="flex gap-2">
+        <Avatar className="w-11 h-11 rounded-full" imgSrc={user.profileImage} />
+        <div className="flex flex-col">
+          <div className="text-sm">
+            {user.firstName} {user.lastName}
+          </div>
+          <select className="select bg-slate-200 select-xs w-full max-w-xs">
+            <option disabled>who can see?</option>
+            <option>public</option>
+            <option>friends</option>
+          </select>
+        </div>
+      </div>
+      <textarea
+        className="textarea textarea-ghost"
+        placeholder={`What do you think? ${user.firstName}`}
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        rows={message.split("\n").length}
+      ></textarea>
+      {addPic && <AddPicture file={file} setFile={setFile} />}
+      <div className="flex border rounded-lg p-2 justify-between items-center">
+        <p>add with your post</p>
+        <div
+          className="flex justify-center items-center w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 active:scale-110"
+          onClick={() => setAddPic((prv) => !prv)}
+        >
+          <ImagesIcon className="w-6" />
+        </div>
+      </div>
+      <button
+        className="btn btn-primary"
+        onClick={hdlCreatePost}
+        disabled={message.trim().length === 0 && !file}
+      >
+        Create Post
+      </button>
+    </div>
+  );
+};
+export default PostForm;
+```

@@ -1,17 +1,33 @@
 import { useState } from "react";
 import { ImagesIcon } from "../icons";
 import useUserStore from "../stores/userStore";
+import usePostStore from "../stores/postStore";
 import Avatar from "./Avatar";
-import { toast } from "react-toastify";
 import AddPicture from "./AddPicture";
+import { toast } from "react-toastify";
 
 const PostForm = () => {
   const user = useUserStore((state) => state.user);
+  const token = useUserStore((state) => state.token);
+  const createPost = usePostStore((state) => state.createPost);
   const [message, setMessage] = useState("");
-  const [addPic, setAddPic] = useState();
+  const [addPic, setAddPic] = useState(false);
+  const [file, setFile] = useState(null);
 
-  const hdlCreatePost = () => {
-    toast(message);
+  const hdlCreatePost = async () => {
+    try {
+      const body = new FormData();
+      body.append("message", message);
+      if (file) {
+        body.append("image", file);
+      }
+      // ยิง api
+      await createPost(body, token, user);
+      toast("Create Post Done");
+    } catch (error) {
+      const errMsg = error.response?.data?.error || error.message;
+      toast.error(errMsg);
+    }
   };
 
   return (
@@ -38,7 +54,7 @@ const PostForm = () => {
         onChange={(e) => setMessage(e.target.value)}
         rows={message.split("\n").length}
       ></textarea>
-      {addPic && <AddPicture />}
+      {addPic && <AddPicture file={file} setFile={setFile} />}
       <div className="flex border rounded-lg p-2 justify-between items-center">
         <p>add with your post</p>
         <div
@@ -51,7 +67,7 @@ const PostForm = () => {
       <button
         className="btn btn-primary"
         onClick={hdlCreatePost}
-        disabled={message.trim().length === 0}
+        disabled={message.trim().length === 0 && !file}
       >
         Create Post
       </button>
