@@ -1220,7 +1220,96 @@ const Profile = () => {
 
 export default Profile;
 ```
+---
+### Create components/PostForm.jsx
+```js
+import { useState } from "react";
+import { ImagesIcon } from "../icons";
+import useUserStore from "../stores/userStore";
+import Avatar from "./Avatar";
+import { toast } from "react-toastify";
+import AddPicture from "./AddPicture";
 
+const PostForm = () => {
+  const user = useUserStore((state) => state.user);
+  const [message, setMessage] = useState("");
+  const [addPic, setAddPic] = useState();
+
+  const hdlCreatePost = () => {
+    toast(message);
+  };
+
+  return (
+    <div className="flex flex-col gap-2">
+      <h3 className="text-xl text-center">Create Post</h3>
+      <div className="divider mt-1 mb-0"></div>
+      <div className="flex gap-2">
+        <Avatar className="w-11 h-11 rounded-full" imgSrc={user.profileImage} />
+        <div className="flex flex-col">
+          <div className="text-sm">
+            {user.firstName} {user.lastName}
+          </div>
+          <select className="select bg-slate-200 select-xs w-full max-w-xs">
+            <option disabled>who can see?</option>
+            <option>public</option>
+            <option>friends</option>
+          </select>
+        </div>
+      </div>
+      <textarea
+        className="textarea textarea-ghost"
+        placeholder={`What do you think? ${user.firstName}`}
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        rows={message.split("\n").length}
+      ></textarea>
+      {addPic && <AddPicture />}
+      <div className="flex border rounded-lg p-2 justify-between items-center">
+        <p>add with your post</p>
+        <div
+          className="flex justify-center items-center w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 active:scale-110"
+          onClick={() => setAddPic((prv) => !prv)}
+        >
+          <ImagesIcon className="w-6" />
+        </div>
+      </div>
+      <button
+        className="btn btn-primary"
+        onClick={hdlCreatePost}
+        disabled={message.trim().length === 0}
+      >
+        Create Post
+      </button>
+    </div>
+  );
+};
+export default PostForm;
+```
+---
+### Create components/AddPicture.jsx
+```js
+import { AddPictureIcon } from "../icons";
+
+const AddPicture = (props) => {
+  const { file, setFile } = props;
+  return (
+    <div className="flex flex-col p-2 border rounded-lg">
+      <div
+        className="bg-slate-100 hover:bg-slate-200 min-h-40 rounded-lg relative cursor-pointer"
+        onClick={() => document.getElementById("input-file").click()}
+      >
+        <input type="file" className="opacity-0" id="input-file" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <AddPictureIcon className="w-10 opacity-70 hover:opacity-100" />
+        </div>
+      </div>
+    </div>
+  );
+};
+export default AddPicture;
+```
+
+---
 ### Create components/SidebarMenu.jsx
 
 ```js
@@ -1331,41 +1420,66 @@ export default SidebarContact;
 ### Create component/CreatePost.jsx
 
 ```js
+import { useState } from "react";
 import { ActivityIcon, PhotoIcon, VideoIcon } from "../icons";
 import useUserStore from "../stores/userStore";
 import Avatar from "./Avatar";
+import PostForm from "./PostForm";
 
 const CreatePost = () => {
   const user = useUserStore((state) => state.user);
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="card bg-base-100 shadow-xl">
-      <div className="card-body">
-        <div className="flex gap-2">
-          <Avatar
-            className="w-11 h-11 rounded-full"
-            imgSrc={user.profileImage}
-          />
-          <button className="btn flex-1 rounded-full justify-start">
-            What do you think?
-          </button>
-        </div>
-        <div className="divider mt-1 mb-0"></div>
-        <div className="flex gap-3 justify-between">
-          <div className="flex-1 flex gap-3 justify-center cursor-pointer hover:bg-gray-300 rounded-lg py-2">
-            <VideoIcon className="w-6" />
-            Live /Stream
+    <>
+      <div className="card bg-base-100 shadow-xl">
+        <div className="card-body">
+          <div className="flex gap-2">
+            <Avatar
+              className="w-11 h-11 rounded-full"
+              imgSrc={user.profileImage}
+            />
+            <button
+              className="btn flex-1 rounded-full justify-start"
+              onClick={() => {
+                setIsOpen(true);
+                document.getElementById("postform-modal").showModal();
+              }}
+            >
+              What do you think?
+            </button>
           </div>
-          <div className="flex-1 flex gap-3 justify-center cursor-pointer hover:bg-gray-300 rounded-lg py-2">
-            <PhotoIcon className="w-6" />
-            Photo /Video
-          </div>
-          <div className="flex-1 flex gap-3 justify-center cursor-pointer hover:bg-gray-300 rounded-lg py-2">
-            <ActivityIcon className="w-6" />
-            Activity
+          <div className="divider mt-1 mb-0"></div>
+          <div className="flex gap-3 justify-between">
+            <div className="flex-1 flex gap-3 justify-center cursor-pointer hover:bg-gray-300 rounded-lg py-2">
+              <VideoIcon className="w-6" />
+              Live /Stream
+            </div>
+            <div className="flex-1 flex gap-3 justify-center cursor-pointer hover:bg-gray-300 rounded-lg py-2">
+              <PhotoIcon className="w-6" />
+              Photo /Video
+            </div>
+            <div className="flex-1 flex gap-3 justify-center cursor-pointer hover:bg-gray-300 rounded-lg py-2">
+              <ActivityIcon className="w-6" />
+              Activity
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <dialog id="postform-modal" className="modal">
+        <div className="modal-box">
+          <button
+            className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            onClick={() => {
+              setIsOpen(false);
+              document.getElementById("postform-modal").close();
+            }}
+          >
+            ✕
+          </button>
+          {isOpen && <PostForm />}
+        </div>
+      </dialog>
+    </>
   );
 };
 export default CreatePost;
@@ -1379,7 +1493,7 @@ export default CreatePost;
 const MenuItem = (props) => {
   const { icon: Icon, text, ...restProps } = props;
   return (
-    <button className="btn bg-opacity-0 border-none shadow-none justify-start gap-2 hover:opacity-20">
+    <button className="btn bg-opacity-0 border-none shadow-none justify-start gap-2 hover:opacity-20 w-full">
       <Icon {...restProps} />
       {text}
     </button>
@@ -1539,3 +1653,6 @@ function Header() {
 }
 export default Header;
 ```
+---
+
+## Step 8
