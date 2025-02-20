@@ -21,7 +21,9 @@ function Header() {
     <header className="flex justify-between px-3 h-14 w-full shadow-lg bg-white fixed top-0 z-10">
       {/* Searchh bar */}
       <div className="flex-1 flex gap-2 items-center">
-        <FacebookLogo className="w-12" />
+        <Link to="/">
+          <FacebookLogo className="w-12" />
+        </Link>
         <label className="input input-bordered flex items-center gap-2 w-64 h-10 rounded-full">
           <input type="text" className="grow" placeholder="Search" />
           <SearchIcon className="w-4 opacity-60" />
