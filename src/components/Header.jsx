@@ -28,7 +28,7 @@ function Header() {
         </label>
       </div>
       {/* Center icon menu */}
-      <div className="flex-1 flex gap-2 justify-center">
+      <div className="flex-1 flex gap-2 justify-center max-lg:hidden">
         <Link
           to="/"
           className="flex justify-center w-20 hover:border-b-2 hover:border-blue-900"

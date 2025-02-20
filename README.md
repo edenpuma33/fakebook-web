@@ -980,7 +980,7 @@ export function FacebookLogo(props) {
         d="M10.725 10.023L11.035 8H9.094V6.687c0-.553.27-1.093 1.14-1.093h.883V3.87s-.801-.137-1.567-.137c-1.6 0-2.644.97-2.644 2.724V8H5.13v2.023h1.777v4.892a7.037 7.037 0 002.188 0v-4.892h1.63z"
       />
     </svg>
-  )
+  );
 }
 
 export function SearchIcon(props) {
@@ -999,7 +999,7 @@ export function SearchIcon(props) {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 
 export function HomeIcon(props) {
@@ -1027,7 +1027,7 @@ export function HomeIcon(props) {
         />
       </g>
     </svg>
-  )
+  );
 }
 
 export function PlayIcon(props) {
@@ -1045,7 +1045,7 @@ export function PlayIcon(props) {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 
 export function MarketIcon(props) {
@@ -1053,7 +1053,7 @@ export function MarketIcon(props) {
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path d="M21.617 9.088l-1.429-5A1.507 1.507 0 0018.746 3H5.254a1.507 1.507 0 00-1.442 1.088l-1.429 5A1.5 1.5 0 003.826 11H4v7.5A2.503 2.503 0 006.5 21h11a2.503 2.503 0 002.5-2.5V11h.174a1.5 1.5 0 001.443-1.912zM19 18.5a1.502 1.502 0 01-1.5 1.5h-11A1.502 1.502 0 015 18.5V11h14zm1.574-8.699a.497.497 0 01-.4.199H3.826a.5.5 0 01-.48-.638l1.428-5A.501.501 0 015.254 4h13.492a.501.501 0 01.48.362l1.428 5a.496.496 0 01-.08.44z" />
     </svg>
-  )
+  );
 }
 
 export function FriendIcon(props) {
@@ -1071,7 +1071,7 @@ export function FriendIcon(props) {
       <circle cx={44.13} cy={27.22} r={6.05} />
       <path d="M42.4 49.94h14A12.24 12.24 0 0044.13 37.7h0a12.21 12.21 0 00-5.75 1.43" />
     </svg>
-  )
+  );
 }
 
 export function MenuIcon(props) {
@@ -1082,7 +1082,7 @@ export function MenuIcon(props) {
         fillRule="evenodd"
       />
     </svg>
-  )
+  );
 }
 
 export function MessengerIcon(props) {
@@ -1101,7 +1101,7 @@ export function MessengerIcon(props) {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 
 export function NotificationIcon(props) {
@@ -1126,7 +1126,7 @@ export function NotificationIcon(props) {
         fill="#000"
       />
     </svg>
-  )
+  );
 }
 
 export function DropdownArrow(props) {
@@ -1144,7 +1144,7 @@ export function DropdownArrow(props) {
         fill="#000"
       />
     </svg>
-  )
+  );
 }
 
 export function FriendIcon2(props) {
@@ -1152,7 +1152,7 @@ export function FriendIcon2(props) {
     <svg viewBox="0 -64 640 640" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path d="M192 256c61.9 0 112-50.1 112-112S253.9 32 192 32 80 82.1 80 144s50.1 112 112 112zm76.8 32h-8.3c-20.8 10-43.9 16-68.5 16s-47.6-6-68.5-16h-8.3C51.6 288 0 339.6 0 403.2V432c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48v-28.8c0-63.6-51.6-115.2-115.2-115.2zM480 256c53 0 96-43 96-96s-43-96-96-96-96 43-96 96 43 96 96 96zm48 32h-3.8c-13.9 4.8-28.6 8-44.2 8s-30.3-3.2-44.2-8H432c-20.4 0-39.2 5.9-55.7 15.4 24.4 26.3 39.7 61.2 39.7 99.8v38.4c0 2.2-.5 4.3-.6 6.4H592c26.5 0 48-21.5 48-48 0-61.9-50.1-112-112-112z" />
     </svg>
-  )
+  );
 }
 
 export function MemoriesIcon(props) {
@@ -1160,7 +1160,7 @@ export function MemoriesIcon(props) {
     <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path d="M9.426 31.305c.61 0 1.078-.164 1.664-.586l6.117-4.524a1.89 1.89 0 00.797-1.547c0-1.101-.867-1.898-1.852-1.898-.445 0-.843.117-1.195.398l-3.14 2.438A19.221 19.221 0 0130.94 8.71 19.265 19.265 0 0150.254 28c.024 10.71-8.578 19.313-19.313 19.313-5.976 0-11.156-2.72-14.695-6.82-.516-.587-1.125-.845-1.71-.845-.962 0-1.852.774-1.852 1.852 0 .516.234 1.102.75 1.734 4.101 4.875 10.523 8.04 17.507 8.04 12.75 0 23.274-10.547 23.274-23.274 0-12.703-10.547-23.273-23.274-23.273-11.789 0-21.726 9.093-23.109 20.578l-2.508-3.563c-.375-.539-.937-.89-1.617-.89-1.078 0-1.922.773-1.922 1.851 0 .469.14.914.422 1.266l4.922 6.07c.75.938 1.36 1.266 2.297 1.266zm15.586 4.383c0 1.054 1.171 1.546 2.203.937l12.562-7.43c.914-.539.89-1.828 0-2.367l-12.562-7.43c-.961-.562-2.203-.14-2.203.938z" />
     </svg>
-  )
+  );
 }
 
 export function GroupIcon(props) {
@@ -1171,7 +1171,7 @@ export function GroupIcon(props) {
         fillRule="evenodd"
       />
     </svg>
-  )
+  );
 }
 ```
 
@@ -1220,8 +1220,11 @@ const Profile = () => {
 
 export default Profile;
 ```
+
 ---
+
 ### Create components/PostForm.jsx
+
 ```js
 import { useState } from "react";
 import { ImagesIcon } from "../icons";
@@ -1296,8 +1299,11 @@ const PostForm = () => {
 };
 export default PostForm;
 ```
+
 ---
+
 ### Create components/AddPicture.jsx
+
 ```js
 import { AddPictureIcon } from "../icons";
 
@@ -1339,6 +1345,7 @@ export default AddPicture;
 ```
 
 ---
+
 ### Create components/SidebarMenu.jsx
 
 ```js
@@ -1384,19 +1391,22 @@ const SidebarMenu = () => {
 };
 export default SidebarMenu;
 ```
+
 ---
 
 ### Create components/PostContainer.jsx
 
 ```js
-import CreatePost from "./CreatePost"
+import CreatePost from "./CreatePost";
 
 const PostContainer = () => {
   return (
-    <div className="w-[680px] mx-auto min-h-screen my-3 flex flex-col gap-4 rounded-lg bg-pink-300"><CreatePost/></div>
-  )
-}
-export default PostContainer
+    <div className="w-[680px] mx-auto min-h-screen my-3 flex flex-col gap-4 rounded-lg bg-pink-300">
+      <CreatePost />
+    </div>
+  );
+};
+export default PostContainer;
 ```
 
 ---
@@ -1444,6 +1454,7 @@ function SidebarContact() {
 }
 export default SidebarContact;
 ```
+
 ---
 
 ### Create component/CreatePost.jsx
@@ -1530,6 +1541,7 @@ const MenuItem = (props) => {
 };
 export default MenuItem;
 ```
+
 ---
 
 เพิ่มหน้า profile กับ add Sidebar
@@ -1618,7 +1630,7 @@ function Header() {
         </label>
       </div>
       {/* Center icon menu */}
-      <div className="flex-1 flex gap-2 justify-center">
+      <div className="flex-1 flex gap-2 justify-center max-lg:hidden">
         <Link
           to="/"
           className="flex justify-center w-20 hover:border-b-2 hover:border-blue-900"
@@ -1682,10 +1694,13 @@ function Header() {
 }
 export default Header;
 ```
+
 ---
 
 ## Step 8 Create store/postStore.js
+
 ### postStore.js
+
 ```js
 import axios from "axios";
 import { create } from "zustand";
@@ -1706,10 +1721,14 @@ const usePostStore = create((set, get) => ({
 
 export default usePostStore;
 ```
+
 ---
+
 ### Edit PostForm.jsx
+
 สร้าง const token, createPost  
 สามารถโพสแล้วข้อมูลไปเชื่อมกับ MySQL
+
 ```js
 import { useState } from "react";
 import { ImagesIcon } from "../icons";
@@ -1719,7 +1738,8 @@ import Avatar from "./Avatar";
 import AddPicture from "./AddPicture";
 import { toast } from "react-toastify";
 
-const PostForm = () => {
+const PostForm = (props) => {
+  const { closePostForm } = props;
   const user = useUserStore((state) => state.user);
   const token = useUserStore((state) => state.token);
   const createPost = usePostStore((state) => state.createPost);
@@ -1737,6 +1757,7 @@ const PostForm = () => {
       // ยิง api
       await createPost(body, token, user);
       toast("Create Post Done");
+      closePostForm();
     } catch (error) {
       const errMsg = error.response?.data?.error || error.message;
       toast.error(errMsg);
@@ -1788,4 +1809,1061 @@ const PostForm = () => {
   );
 };
 export default PostForm;
+```
+
+### Edit CreatePost.jsx
+
+```js
+import { useState } from "react";
+import { ActivityIcon, PhotoIcon, VideoIcon } from "../icons";
+import useUserStore from "../stores/userStore";
+import Avatar from "./Avatar";
+import PostForm from "./PostForm";
+
+const CreatePost = () => {
+  const user = useUserStore((state) => state.user);
+  const [isOpen, setIsOpen] = useState(false);
+  const closePostForm = () => {
+    setIsOpen(false);
+    document.getElementById("postform-modal").close();
+  };
+  return (
+    <>
+      <div className="card bg-base-100 shadow-xl">
+        <div className="card-body">
+          <div className="flex gap-2">
+            <Avatar
+              className="w-11 h-11 rounded-full"
+              imgSrc={user.profileImage}
+            />
+            <button
+              className="btn flex-1 rounded-full justify-start"
+              onClick={() => {
+                setIsOpen(true);
+                document.getElementById("postform-modal").showModal();
+              }}
+            >
+              What do you think?
+            </button>
+          </div>
+          <div className="divider mt-1 mb-0"></div>
+          <div className="flex gap-3 justify-between">
+            <div className="flex-1 flex gap-3 justify-center cursor-pointer hover:bg-gray-300 rounded-lg py-2">
+              <VideoIcon className="w-6" />
+              Live /Stream
+            </div>
+            <div className="flex-1 flex gap-3 justify-center cursor-pointer hover:bg-gray-300 rounded-lg py-2">
+              <PhotoIcon className="w-6" />
+              Photo /Video
+            </div>
+            <div className="flex-1 flex gap-3 justify-center cursor-pointer hover:bg-gray-300 rounded-lg py-2">
+              <ActivityIcon className="w-6" />
+              Activity
+            </div>
+          </div>
+        </div>
+      </div>
+      <dialog id="postform-modal" className="modal">
+        <div className="modal-box">
+          <button
+            className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            onClick={closePostForm}
+          >
+            ✕
+          </button>
+          {isOpen && <PostForm closePostForm={closePostForm} />}
+        </div>
+      </dialog>
+    </>
+  );
+};
+export default CreatePost;
+```
+
+## Step 9 Edit postStore.js
+
+### Edit postStore.js
+
+```js
+import axios from "axios";
+import { create } from "zustand";
+
+const usePostStore = create((set, get) => ({
+  posts: [],
+  currentPost: null,
+  loading: false,
+  createPost: async (body, token, user) => {
+    const rs = await axios.post("http://localhost:8899/post", body, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    // set((state) => ({
+    //   posts: [{ ...rs.data, user, likes: [], comments: [] }, ...state.posts],
+    // }));
+  },
+  getAllPosts: async (token) => {
+    set({ loading: true });
+    const rs = await axios.get("http://localhost:8899/post", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    set({ posts: rs.data.posts, loading: false });
+  },
+}));
+
+export default usePostStore;
+```
+
+---
+
+### Edit PostContainer.jsx
+
+```js
+import { useEffect } from "react";
+import usePostStore from "../stores/postStore";
+import CreatePost from "./CreatePost";
+import PostItem from "./PostItem";
+import useUserStore from "../stores/userStore";
+
+const PostContainer = () => {
+  const posts = usePostStore((state) => state.posts);
+  const getAllPosts = usePostStore((state) => state.getAllPosts);
+  const token = useUserStore((state) => state.token);
+
+  useEffect(() => {
+    getAllPosts(token);
+  }, []);
+  return (
+    <div className="w-[680px] mx-auto min-h-screen my-3 flex flex-col gap-4 rounded-lg bg-pink-300">
+      <CreatePost />
+      <pre>{JSON.stringify(posts, null, 2)}</pre>
+      <PostItem />
+    </div>
+  );
+};
+export default PostContainer;
+```
+
+---
+
+### Create CommentContainer.jsx
+
+```js
+function CommentContainer() {
+  return <div>CommentContainer</div>;
+}
+export default CommentContainer;
+```
+
+---
+
+### Create PostItem.jsx
+
+```js
+import {
+  CloseIcon,
+  CommentIcon,
+  LikeIcon,
+  ShareIcon,
+  ThreeDotIcon,
+} from "../icons";
+import Avatar from "./Avatar";
+import CommentContainer from "./CommentContainer";
+
+function PostItem(props) {
+  const { post } = props;
+  console.log(post);
+  return (
+    <div className="card bg-base-100 shadow-xl">
+      <div className="card-body p-3">
+        <div className="flex justify-between">
+          <div className="flex gap-3">
+            <Avatar
+              imgSrc={post.user.profileImage}
+              className="w-11 h-11 rounded-full"
+            />
+            <div className="flex flex-col">
+              <p className="font-bold text-sm">
+                {post.user.firstName} {post.user.lastName}
+              </p>
+              <p className="text-xs opacity-70">
+                {new Date(post.createdAt).toDateString()} ,
+                {new Date(post.createdAt).toLocaleTimeString()}
+              </p>
+            </div>
+          </div>
+          <div className="flex gap-2">
+            <div className="dropdown">
+              <div tabIndex={0} role="button">
+                <div className="avatar items-center cursor-pointer">
+                  <div className="w-10 h-10 rounded-full !flex justify-center items-center hover:bg-gray-200">
+                    <ThreeDotIcon className="w-6" />
+                  </div>
+                </div>
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+              >
+                <li>
+                  <a>Edit</a>
+                </li>
+                <li>
+                  <a>Delete</a>
+                </li>
+              </ul>
+            </div>
+            <div className="avatar items-center cursor-pointer">
+              <div className="w-10 h-10 rounded-full !flex justify-center items-center hover:bg-gray-200">
+                <CloseIcon className="w-6" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>{post.message}</p>
+        {post.image && (
+          <img
+            src={post.image}
+            alt="post image"
+            className="p-4 max-h-[500px] object-contain"
+          />
+        )}
+        {/* like, comment */}
+        <div className="flex justify-between items-center pe-4">
+          <div className="avatar items-end cursor-pointer gap-1">
+            <div className="w-7 h-7 rounded-full !flex justify-center items-center bg-blue-200">
+              <LikeIcon className="w-5" />
+            </div>
+            <p>{post.Like.length} likes</p>
+          </div>
+          <div className="flex">
+            <p className="opacity-60">{post.comment.length} comments</p>
+          </div>
+        </div>
+        <div className="divider h-0 my-0"></div>
+        <div className="flex gap-3 justify-between">
+          <div className="flex gap-3 justify-center items-center cursor-pointer hover:bg-gray-300 rounded-lg py-2 flex-1">
+            <LikeIcon className="w-6" /> Like
+          </div>
+          <div className="flex gap-3 justify-center items-center cursor-pointer hover:bg-gray-300 rounded-lg py-2 flex-1">
+            <CommentIcon className="w-8" /> Comment
+          </div>
+          <div className="flex gap-3 justify-center items-center cursor-pointer hover:bg-gray-300 rounded-lg py-2 flex-1">
+            <ShareIcon className="w-6" /> Share
+          </div>
+        </div>
+        <div className="divider h-0 my-0"></div>
+        <CommentContainer />
+      </div>
+    </div>
+  );
+
+  // return (
+  //   <div className="border bg-lime-100">
+  //     <pre>{JSON.stringify(post, null, 2)}</pre>
+  //   </div>
+  // );
+}
+export default PostItem;
+```
+
+---
+
+### Edit PostContainer.jsx
+
+สร้าง Post
+
+```js
+import { useEffect } from "react";
+import usePostStore from "../stores/postStore";
+import CreatePost from "./CreatePost";
+import PostItem from "./PostItem";
+import useUserStore from "../stores/userStore";
+
+const PostContainer = () => {
+  const posts = usePostStore((state) => state.posts);
+  const getAllPosts = usePostStore((state) => state.getAllPosts);
+  const token = useUserStore((state) => state.token);
+
+  useEffect(() => {
+    getAllPosts(token);
+  }, []);
+  return (
+    <div className="w-[680px] mx-auto min-h-screen my-3 flex flex-col gap-4 rounded-lg">
+      <CreatePost />
+      {/* <pre>{JSON.stringify(posts, null, 2)}</pre> */}
+      {posts.map((post) => (
+        <PostItem key={post.id} post={post} />
+      ))}
+    </div>
+  );
+};
+export default PostContainer;
+```
+
+---
+
+### PostForm.jsx
+
+import usePostStore และเรียกใช้ getAllPosts
+
+และเพิ่ม getAllposts(token) เพื่อทำให้เวลาโพสเสร็จแล้วหน้าโพสขึ้นทันที
+
+```js
+import { useState } from "react";
+import { ImagesIcon } from "../icons";
+import useUserStore from "../stores/userStore";
+import usePostStore from "../stores/postStore";
+import Avatar from "./Avatar";
+import AddPicture from "./AddPicture";
+import { toast } from "react-toastify";
+
+const PostForm = (props) => {
+  const { closePostForm } = props;
+  const user = useUserStore((state) => state.user);
+  const token = useUserStore((state) => state.token);
+  const createPost = usePostStore((state) => state.createPost);
+  const getAllPosts = usePostStore((state) => state.getAllPosts);
+  const [message, setMessage] = useState("");
+  const [addPic, setAddPic] = useState(false);
+  const [file, setFile] = useState(null);
+
+  const hdlCreatePost = async () => {
+    try {
+      const body = new FormData();
+      body.append("message", message);
+      if (file) {
+        body.append("image", file);
+      }
+      // ยิง api
+      await createPost(body, token, user);
+      toast("Create Post Done");
+      closePostForm();
+      getAllPosts(token);
+    } catch (error) {
+      const errMsg = error.response?.data?.error || error.message;
+      toast.error(errMsg);
+    }
+  };
+
+  return (
+    <div className="flex flex-col gap-2">
+      <h3 className="text-xl text-center">Create Post</h3>
+      <div className="divider mt-1 mb-0"></div>
+      <div className="flex gap-2">
+        <Avatar className="w-11 h-11 rounded-full" imgSrc={user.profileImage} />
+        <div className="flex flex-col">
+          <div className="text-sm">
+            {user.firstName} {user.lastName}
+          </div>
+          <select className="select bg-slate-200 select-xs w-full max-w-xs">
+            <option disabled>who can see?</option>
+            <option>public</option>
+            <option>friends</option>
+          </select>
+        </div>
+      </div>
+      <textarea
+        className="textarea textarea-ghost"
+        placeholder={`What do you think? ${user.firstName}`}
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        rows={message.split("\n").length}
+      ></textarea>
+      {addPic && <AddPicture file={file} setFile={setFile} />}
+      <div className="flex border rounded-lg p-2 justify-between items-center">
+        <p>add with your post</p>
+        <div
+          className="flex justify-center items-center w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 active:scale-110"
+          onClick={() => setAddPic((prv) => !prv)}
+        >
+          <ImagesIcon className="w-6" />
+        </div>
+      </div>
+      <button
+        className="btn btn-primary"
+        onClick={hdlCreatePost}
+        disabled={message.trim().length === 0 && !file}
+      >
+        Create Post
+      </button>
+    </div>
+  );
+};
+export default PostForm;
+```
+
+### วิธีด้านบนยิง axios 2 ครั้งสามารถเปลี่ยนเป็นวิธีนี้จะยิง axios แค่รอบเดียว Performance จะดีกว่า
+
+### postStore.js
+
+เปิดใช้ set((state))
+
+```js
+import axios from "axios";
+import { create } from "zustand";
+
+const usePostStore = create((set, get) => ({
+  posts: [],
+  currentPost: null,
+  loading: false,
+  createPost: async (body, token, user) => {
+    const rs = await axios.post("http://localhost:8899/post", body, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    // ***
+    set((state) => ({
+      posts: [
+        { ...rs.data.result, user, Like: [], comment: [] },
+        ...state.posts,
+      ],
+    }));
+  },
+  getAllPosts: async (token) => {
+    set({ loading: true });
+    const rs = await axios.get("http://localhost:8899/post", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    set({ posts: rs.data.posts, loading: false });
+  },
+}));
+
+export default usePostStore;
+```
+
+### PostForm.jsx
+
+ิปิด getAllposts(token)
+
+```js
+import { useState } from "react";
+import { ImagesIcon } from "../icons";
+import useUserStore from "../stores/userStore";
+import usePostStore from "../stores/postStore";
+import Avatar from "./Avatar";
+import AddPicture from "./AddPicture";
+import { toast } from "react-toastify";
+
+const PostForm = (props) => {
+  const { closePostForm } = props;
+  const user = useUserStore((state) => state.user);
+  const token = useUserStore((state) => state.token);
+  const createPost = usePostStore((state) => state.createPost);
+  const getAllPosts = usePostStore((state) => state.getAllPosts);
+  const [message, setMessage] = useState("");
+  const [addPic, setAddPic] = useState(false);
+  const [file, setFile] = useState(null);
+
+  const hdlCreatePost = async () => {
+    try {
+      const body = new FormData();
+      body.append("message", message);
+      if (file) {
+        body.append("image", file);
+      }
+      // ยิง api
+      await createPost(body, token, user);
+      toast("Create Post Done");
+      closePostForm();
+      // getAllPosts(token);
+    } catch (error) {
+      const errMsg = error.response?.data?.error || error.message;
+      toast.error(errMsg);
+    }
+  };
+
+  return (
+    <div className="flex flex-col gap-2">
+      <h3 className="text-xl text-center">Create Post</h3>
+      <div className="divider mt-1 mb-0"></div>
+      <div className="flex gap-2">
+        <Avatar className="w-11 h-11 rounded-full" imgSrc={user.profileImage} />
+        <div className="flex flex-col">
+          <div className="text-sm">
+            {user.firstName} {user.lastName}
+          </div>
+          <select className="select bg-slate-200 select-xs w-full max-w-xs">
+            <option disabled>who can see?</option>
+            <option>public</option>
+            <option>friends</option>
+          </select>
+        </div>
+      </div>
+      <textarea
+        className="textarea textarea-ghost"
+        placeholder={`What do you think? ${user.firstName}`}
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        rows={message.split("\n").length}
+      ></textarea>
+      {addPic && <AddPicture file={file} setFile={setFile} />}
+      <div className="flex border rounded-lg p-2 justify-between items-center">
+        <p>add with your post</p>
+        <div
+          className="flex justify-center items-center w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 active:scale-110"
+          onClick={() => setAddPic((prv) => !prv)}
+        >
+          <ImagesIcon className="w-6" />
+        </div>
+      </div>
+      <button
+        className="btn btn-primary"
+        onClick={hdlCreatePost}
+        disabled={message.trim().length === 0 && !file}
+      >
+        Create Post
+      </button>
+    </div>
+  );
+};
+export default PostForm;
+```
+
+## Step 10 Edit PostItem.jsx
+
+### PostItem.jsx
+
+ทำให้ไม่สามารถลบโพสคนอื่นได้ และไม่เห็นปุ่มลบโพสของคนอื่นด้วย
+
+และสามารถกด delete แล้วลบได้จริงแล้ว
+
+รับ getAllPosts เพื่อเมื่อกดลบโพสต์ ที่หน้าเพจจะหายไปทันที
+```js
+import {
+  CloseIcon,
+  CommentIcon,
+  LikeIcon,
+  ShareIcon,
+  ThreeDotIcon,
+} from "../icons";
+import Avatar from "./Avatar";
+import CommentContainer from "./CommentContainer";
+import useUserStore from "../stores/userStore";
+import usePostStore from "../stores/postStore";
+import { toast } from "react-toastify";
+
+function PostItem(props) {
+  const user = useUserStore((state) => state.user);
+  const token = useUserStore((state) => state.token);
+  const deletePost = usePostStore((state) => state.deletePost);
+  const getAllPosts = usePostStore((state) => state.getAllPosts);
+  const { post } = props;
+  // console.log(post);
+  const hdlDelete = async () => {
+    try {
+      await deletePost(post.id, token);
+      toast.success("Delete done");
+      getAllPosts(token);
+    } catch (err) {
+      const errMsg = err.response?.data?.error || err.message;
+      toast.error(errMsg);
+      console.log(err);
+    }
+  };
+  return (
+    <div className="card bg-base-100 shadow-xl">
+      <div className="card-body p-3">
+        <div className="flex justify-between">
+          <div className="flex gap-3">
+            <Avatar
+              imgSrc={post.user.profileImage}
+              className="w-11 h-11 rounded-full"
+            />
+            <div className="flex flex-col">
+              <p className="font-bold text-sm">
+                {post.user.firstName} {post.user.lastName}
+              </p>
+              <p className="text-xs opacity-70">
+                {new Date(post.createdAt).toDateString()} ,
+                {new Date(post.createdAt).toLocaleTimeString()}
+              </p>
+            </div>
+          </div>
+          <div className="flex gap-2">
+            {user.id === post.userId && (
+              <div className="dropdown">
+                <div tabIndex={0} role="button">
+                  <div className="avatar items-center cursor-pointer">
+                    <div className="w-10 h-10 rounded-full !flex justify-center items-center hover:bg-gray-200">
+                      <ThreeDotIcon className="w-6" />
+                    </div>
+                  </div>
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+                >
+                  <li>
+                    <a>Edit</a>
+                  </li>
+                  <li onClick={hdlDelete}>
+                    <a>Delete</a>
+                  </li>
+                </ul>
+              </div>
+            )}
+            <div className="avatar items-center cursor-pointer">
+              <div className="w-10 h-10 rounded-full !flex justify-center items-center hover:bg-gray-200">
+                <CloseIcon className="w-6" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>{post.message}</p>
+        {post.image && (
+          <img
+            src={post.image}
+            alt="post image"
+            className="p-4 max-h-[500px] object-contain"
+          />
+        )}
+        {/* like, comment */}
+        <div className="flex justify-between items-center pe-4">
+          <div className="avatar items-end cursor-pointer gap-1">
+            <div className="w-7 h-7 rounded-full !flex justify-center items-center bg-blue-200">
+              <LikeIcon className="w-5" />
+            </div>
+            <p>{post.Like.length} likes</p>
+          </div>
+          <div className="flex">
+            <p className="opacity-60">{post.comment.length} comments</p>
+          </div>
+        </div>
+        <div className="divider h-0 my-0"></div>
+        <div className="flex gap-3 justify-between">
+          <div className="flex gap-3 justify-center items-center cursor-pointer hover:bg-gray-300 rounded-lg py-2 flex-1">
+            <LikeIcon className="w-6" /> Like
+          </div>
+          <div className="flex gap-3 justify-center items-center cursor-pointer hover:bg-gray-300 rounded-lg py-2 flex-1">
+            <CommentIcon className="w-8" /> Comment
+          </div>
+          <div className="flex gap-3 justify-center items-center cursor-pointer hover:bg-gray-300 rounded-lg py-2 flex-1">
+            <ShareIcon className="w-6" /> Share
+          </div>
+        </div>
+        <div className="divider h-0 my-0"></div>
+        <CommentContainer />
+      </div>
+    </div>
+  );
+
+  // return (
+  //   <div className="border bg-lime-100">
+  //     <pre>{JSON.stringify(post, null, 2)}</pre>
+  //   </div>
+  // );
+}
+export default PostItem;
+```
+
+### Edit postStore.js
+
+```js
+import axios from "axios";
+import { create } from "zustand";
+
+const usePostStore = create((set, get) => ({
+  posts: [],
+  currentPost: null,
+  loading: false,
+  createPost: async (body, token, user) => {
+    const rs = await axios.post("http://localhost:8899/post", body, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    // ***
+    set((state) => ({
+      posts: [
+        { ...rs.data.result, user, Like: [], comment: [] },
+        ...state.posts,
+      ],
+    }));
+  },
+  getAllPosts: async (token) => {
+    set({ loading: true });
+    const rs = await axios.get("http://localhost:8899/post", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    set({ posts: rs.data.posts, loading: false });
+  },
+  deletePost: async (postId, token) => {
+    const rs = await axios.delete(`http://localhost:8899/post/${postId}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  },
+}));
+
+export default usePostStore;
+```
+---
+วิธีด้านบนต้องยิง axios 2 ครั้ง สามารถแก้ได้โดยวิธีด่านล่างต่อไปนี้
+
+### postStore.js
+เพิ่ม set(state) ใน deletePost
+```js
+import axios from "axios";
+import { create } from "zustand";
+
+const usePostStore = create((set, get) => ({
+  posts: [],
+  currentPost: null,
+  loading: false,
+
+  createPost: async (body, token, user) => {
+    const rs = await axios.post("http://localhost:8899/post", body, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    // ***
+    set((state) => ({
+      posts: [
+        { ...rs.data.result, user, Like: [], comment: [] },
+        ...state.posts,
+      ],
+    }));
+  },
+
+  getAllPosts: async (token) => {
+    set({ loading: true });
+    const rs = await axios.get("http://localhost:8899/post", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    set({ posts: rs.data.posts, loading: false });
+  },
+
+  deletePost: async (postId, token) => {
+    const rs = await axios.delete(`http://localhost:8899/post/${postId}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    set((state) => ({
+      posts: state.posts.filter((post) => post.id !== postId),
+    }));
+  },
+  // react-query
+}));
+
+export default usePostStore;
+```
+### และไปปิด getAllPosts(token) ใน PostItem.jsx
+
+---
+
+## Step 11 Can Update Post 
+ทำให้ตอนกด Edit จะเป็นการ Edit ที่โพสนั้นจริงๆ
+
+### postStore.js
+Add setCurrentPost and updatePost
+```js
+import axios from "axios";
+import { create } from "zustand";
+
+const usePostStore = create((set, get) => ({
+  posts: [],
+  currentPost: null,
+  loading: false,
+
+  createPost: async (body, token, user) => {
+    const rs = await axios.post("http://localhost:8899/post", body, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    // ***
+    set((state) => ({
+      posts: [
+        { ...rs.data.result, user, Like: [], comment: [] },
+        ...state.posts,
+      ],
+    }));
+  },
+
+  getAllPosts: async (token) => {
+    set({ loading: true });
+    const rs = await axios.get("http://localhost:8899/post", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    set({ posts: rs.data.posts, loading: false });
+  },
+
+  deletePost: async (postId, token) => {
+    const rs = await axios.delete(`http://localhost:8899/post/${postId}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    set((state) => ({
+      posts: state.posts.filter((post) => post.id !== postId),
+    }));
+  },
+  setCurrentPost: (post) => set({ currentPost: post }),
+  updatePost: async (postId, token, body) => {
+    const rs = await axios.put(`http://localhost:8899/post/${postId}`, body, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  },
+}));
+
+export default usePostStore;
+```
+---
+### Create PostFormEdit.jsx
+```js
+import { useState } from "react";
+import { ImagesIcon } from "../icons";
+import useUserStore from "../stores/userStore";
+import usePostStore from "../stores/postStore";
+import Avatar from "./Avatar";
+import AddPicture from "./AddPicture";
+import { toast } from "react-toastify";
+
+const PostFormEdit = (props) => {
+  const { closePostForm } = props;
+  const user = useUserStore((state) => state.user);
+  const token = useUserStore((state) => state.token);
+
+  const updatePost = usePostStore((state) => state.updatePost);
+  const setCurrentPost = usePostStore((state) => state.setCurrentPost);
+
+  const getAllPosts = usePostStore((state) => state.getAllPosts);
+  const [message, setMessage] = useState("");
+  const [addPic, setAddPic] = useState(false);
+  const [file, setFile] = useState(null);
+
+  const hdlUpdatePost = async () => {
+    try {
+    } catch (error) {
+      const errMsg = error.response?.data?.error || error.message;
+      toast.error(errMsg);
+    }
+  };
+
+  return (
+    <div className="flex flex-col gap-2">
+      <h3 className="text-xl text-center">Update Post</h3>
+      <div className="divider mt-1 mb-0"></div>
+      <div className="flex gap-2">
+        <Avatar className="w-11 h-11 rounded-full" imgSrc={user.profileImage} />
+        <div className="flex flex-col">
+          <div className="text-sm">
+            {user.firstName} {user.lastName}
+          </div>
+          <select className="select bg-slate-200 select-xs w-full max-w-xs">
+            <option disabled>who can see?</option>
+            <option>public</option>
+            <option>friends</option>
+          </select>
+        </div>
+      </div>
+      <textarea
+        className="textarea textarea-ghost"
+        placeholder={`What do you think? ${user.firstName}`}
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        rows={message.split("\n").length}
+      ></textarea>
+      <div className="border flex justify-evenly items-center">
+        <p>Picture show here</p>
+        <button className="btn btn-sm">Remove</button>
+      </div>
+      {addPic && <AddPicture file={file} setFile={setFile} />}
+      <div className="flex border rounded-lg p-2 justify-between items-center">
+        <p>add with your post</p>
+        <div
+          className="flex justify-center items-center w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 active:scale-110"
+          onClick={() => setAddPic((prv) => !prv)}
+        >
+          <ImagesIcon className="w-6" />
+        </div>
+      </div>
+      <button
+        className="btn btn-primary"
+        onClick={hdlUpdatePost}
+        disabled={message.trim().length === 0 && !file}
+      >
+        Update Post
+      </button>
+    </div>
+  );
+};
+export default PostFormEdit;
+```
+---
+### Edit PostContainer.jsx
+```js
+import { useEffect } from "react";
+import usePostStore from "../stores/postStore";
+import CreatePost from "./CreatePost";
+import PostItem from "./PostItem";
+import useUserStore from "../stores/userStore";
+import { CloseIcon } from "../icons";
+import PostFormEdit from "./PostFormEdit";
+
+const PostContainer = () => {
+  const posts = usePostStore((state) => state.posts);
+  const getAllPosts = usePostStore((state) => state.getAllPosts);
+  const token = useUserStore((state) => state.token);
+  const currentPost = usePostStore((state) => state.currentPost);
+  const setCurrentPost = usePostStore((state) => state.setCurrentPost);
+
+  useEffect(() => {
+    getAllPosts(token);
+  }, []);
+
+  return (
+    <>
+      <div className="w-[680px] mx-auto min-h-screen my-3 flex flex-col gap-4 rounded-lg">
+        <CreatePost />
+        {/* <pre>{JSON.stringify(posts, null, 2)}</pre> */}
+        {posts.map((post) => (
+          <PostItem key={post.id} post={post} />
+        ))}
+      </div>
+      <dialog
+        id="editform-modal"
+        className="modal"
+        onClose={() => setCurrentPost(null)}
+      >
+        <div className="modal-box">
+          <button
+            type="button"
+            className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            onClick={() => document.getElementById("editform-modal").close()}
+          >
+            <CloseIcon />
+          </button>
+          {currentPost && <PostFormEdit/>}
+        </div>
+      </dialog>
+    </>
+  );
+};
+export default PostContainer;
+```
+
+---
+
+### Edit PostItem.jsx
+```js
+import {
+  CloseIcon,
+  CommentIcon,
+  LikeIcon,
+  ShareIcon,
+  ThreeDotIcon,
+} from "../icons";
+import Avatar from "./Avatar";
+import CommentContainer from "./CommentContainer";
+import useUserStore from "../stores/userStore";
+import usePostStore from "../stores/postStore";
+import { toast } from "react-toastify";
+
+function PostItem(props) {
+  const user = useUserStore((state) => state.user);
+  const token = useUserStore((state) => state.token);
+  const deletePost = usePostStore((state) => state.deletePost);
+  const getAllPosts = usePostStore((state) => state.getAllPosts);
+  const setCurrentPost = usePostStore((state) => state.setCurrentPost);
+  const { post } = props;
+  // console.log(post);
+  const hdlDelete = async () => {
+    try {
+      await deletePost(post.id, token);
+      toast.success("Delete done");
+      // getAllPosts(token);
+    } catch (err) {
+      const errMsg = err.response?.data?.error || err.message;
+      toast.error(errMsg);
+      console.log(err);
+    }
+  };
+  const hdlShowEditModal = () => {
+    setCurrentPost(post);
+    document.getElementById("editform-modal").showModal();
+  };
+  return (
+    <div className="card bg-base-100 shadow-xl">
+      <div className="card-body p-3">
+        <div className="flex justify-between">
+          <div className="flex gap-3">
+            <Avatar
+              imgSrc={post.user.profileImage}
+              className="w-11 h-11 rounded-full"
+            />
+            <div className="flex flex-col">
+              <p className="font-bold text-sm">
+                {post.user.firstName} {post.user.lastName}
+              </p>
+              <p className="text-xs opacity-70">
+                {new Date(post.createdAt).toDateString()} ,
+                {new Date(post.createdAt).toLocaleTimeString()}
+              </p>
+            </div>
+          </div>
+          <div className="flex gap-2">
+            {user.id === post.userId && (
+              <div className="dropdown">
+                <div tabIndex={0} role="button">
+                  <div className="avatar items-center cursor-pointer">
+                    <div className="w-10 h-10 rounded-full !flex justify-center items-center hover:bg-gray-200">
+                      <ThreeDotIcon className="w-6" />
+                    </div>
+                  </div>
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+                >
+                  <li onClick={hdlShowEditModal}>
+                    <a>Edit</a>
+                  </li>
+                  <li onClick={hdlDelete}>
+                    <a>Delete</a>
+                  </li>
+                </ul>
+              </div>
+            )}
+            <div className="avatar items-center cursor-pointer">
+              <div className="w-10 h-10 rounded-full !flex justify-center items-center hover:bg-gray-200">
+                <CloseIcon className="w-6" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>{post.message}</p>
+        {post.image && (
+          <img
+            src={post.image}
+            alt="post image"
+            className="p-4 max-h-[500px] object-contain"
+          />
+        )}
+        {/* like, comment */}
+        <div className="flex justify-between items-center pe-4">
+          <div className="avatar items-end cursor-pointer gap-1">
+            <div className="w-7 h-7 rounded-full !flex justify-center items-center bg-blue-200">
+              <LikeIcon className="w-5" />
+            </div>
+            <p>{post.Like.length} likes</p>
+          </div>
+          <div className="flex">
+            <p className="opacity-60">{post.comment.length} comments</p>
+          </div>
+        </div>
+        <div className="divider h-0 my-0"></div>
+        <div className="flex gap-3 justify-between">
+          <div className="flex gap-3 justify-center items-center cursor-pointer hover:bg-gray-300 rounded-lg py-2 flex-1">
+            <LikeIcon className="w-6" /> Like
+          </div>
+          <div className="flex gap-3 justify-center items-center cursor-pointer hover:bg-gray-300 rounded-lg py-2 flex-1">
+            <CommentIcon className="w-8" /> Comment
+          </div>
+          <div className="flex gap-3 justify-center items-center cursor-pointer hover:bg-gray-300 rounded-lg py-2 flex-1">
+            <ShareIcon className="w-6" /> Share
+          </div>
+        </div>
+        <div className="divider h-0 my-0"></div>
+        <CommentContainer />
+      </div>
+    </div>
+  );
+
+  // return (
+  //   <div className="border bg-lime-100">
+  //     <pre>{JSON.stringify(post, null, 2)}</pre>
+  //   </div>
+  // );
+}
+export default PostItem;
 ```
